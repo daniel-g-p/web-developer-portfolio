@@ -1,0 +1,40 @@
+.imageContainer.circle {
+    border-radius: 50%;
+    width: 50%;
+    overflow: hidden;
+    margin: $s auto;
+    & img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+}
+
+.imageContainer {
+    width: 75%;
+    max-width: 360px;
+    margin: $xl auto;
+    position: relative;
+    @include flexColumn(center, center);
+    &>img {
+        position: absolute;
+        width: 85%;
+    }
+    & a {
+        width: 100%;
+        z-index: 1;
+        & img {
+            width: 100%;
+            transition: transform $fast ease;
+        }
+        &:hover img {
+            transform: scale(0.95);
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    .imageContainer.circle {
+        width: 75%;
+    }
+}

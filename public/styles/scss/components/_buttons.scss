@@ -1,0 +1,38 @@
+button {
+    font: 700 $s/1 'Open Sans', sans-serif;
+    padding: 1em 2em;
+    outline: none;
+    border: 4px solid $secondary-main;
+    color: $body;
+    margin: 0.5em;
+    transition-duration: $fast;
+    transition-timing-function: ease;
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        box-shadow: 0 1em 2em -1em $secondary-light;
+    }
+    &.btnFill {
+        background-color: $secondary-main;
+        transition-property: background-color, border-color, box-shadow;
+        &:hover,
+        &:focus {
+            background-color: $secondary-light;
+            border-color: $secondary-light;
+        }
+    }
+    &.btnOutline {
+        background: none;
+        transition-property: border-color, box-shadow;
+        &:hover {
+            border-color: $secondary-light;
+        }
+    }
+}
+
+.buttons {
+    margin-top: $m;
+    & button {
+        margin-right: 1em;
+    }
+}

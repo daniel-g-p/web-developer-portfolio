@@ -1,0 +1,40 @@
+.link {
+    display: block;
+    font: 700 $s/1 'Raleway', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $body;
+    position: relative;
+    transition-property: color, transform;
+    margin-block: 1em;
+    text-align: left;
+    @include transitionTime($fast, ease);
+    &::before {
+        display: inline-block;
+        content: '>';
+        font-size: 1em;
+        position: absolute;
+        bottom: 0.125em;
+        left: -1em;
+        opacity: 0;
+        transition: opacity $fast ease;
+    }
+    &:hover {
+        transform: translateX(1em);
+        color: $primary;
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+.linkAlt {
+    text-decoration: none;
+    color: $body;
+    text-transform: uppercase;
+    transition: color $fast ease;
+    margin-block: 1em;
+    &:hover {
+        color: $primary;
+    }
+}

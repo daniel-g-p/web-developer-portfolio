@@ -1,0 +1,17 @@
+section {
+    padding: $xl $m;
+    position: relative;
+    overflow-x: hidden;
+}
+
+@media (min-width: $mobile) {
+    section {
+        padding-inline: 6rem;
+    }
+}
+
+@media (min-width: $desktop) {
+    section {
+        padding-inline: 12.5%;
+    }
+}

@@ -1,0 +1,26 @@
+.contact {
+    text-align: left;
+    & p {
+        max-width: 720px;
+        margin-inline: auto;
+    }
+}
+
+.alternative {
+    @include flexRow(center, center);
+    margin-bottom: $m;
+    margin-inline: auto;
+    max-width: 720px;
+    & div {
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $body;
+    }
+    & span {
+        margin-inline: $m;
+    }
+    &+p {
+        text-align: center;
+    }
+}

@@ -1,0 +1,82 @@
+form {
+    background-color: $background-secondary;
+    padding: $l $m;
+    margin: $l auto;
+    max-width: 720px;
+    & div {
+        @include flexRow(flex-start, center);
+        margin-bottom: $l;
+        position: relative;
+        scroll-margin-top: $s;
+        &::after {
+            position: absolute;
+            display: block;
+            left: 0;
+            bottom: -$s;
+            color: $error;
+            font-size: $xs;
+            opacity: 0;
+            transition: opacity $fast ease;
+        }
+        &.error {
+            & input,
+            textArea {
+                border-color: $error;
+            }
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+    & label {
+        position: absolute;
+        width: 24px;
+        max-height: 24px;
+        left: $s;
+        & img {
+            width: 100%;
+        }
+    }
+    & input,
+    textarea {
+        width: 100%;
+        background: none;
+        outline: none;
+        border: 2px solid $body;
+        padding: 1em 1em 1em 3em;
+        font: 400 $s/1 "Open Sans", sans-serif;
+        color: $body;
+        resize: none;
+        transition: border-color $fast ease;
+        &:hover {
+            border-color: $secondary-light;
+        }
+        &:focus {
+            border-color: $secondary-light;
+        }
+    }
+    .btnFill {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+#messageInput label {
+    top: $s;
+}
+
+#nameInput::after {
+    content: "What's your name?";
+}
+
+#emailInput::after {
+    content: "Please enter a valid email";
+}
+
+#subjectInput::after {
+    content: "How I can help you?";
+}
+
+#messageInput::after {
+    content: "No need to be shy ;)";
+}

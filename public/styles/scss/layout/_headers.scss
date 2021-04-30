@@ -1,0 +1,111 @@
+header {
+    padding: $m;
+    background-image: url("./../../images/jpg/sand_background.jpg");
+    background-size: cover;
+    background-position: right bottom;
+    & h1 {
+        margin-block: $xl;
+    }
+    & nav {
+        @include flexRow(space-between,
+        center);
+    }
+}
+
+.desktopNav {
+    @include flexRow(flex-start,
+    center);
+    & div {
+        display: none;
+    }
+}
+
+.navToggle {
+    transform: scale(2);
+    & path {
+        fill: $body;
+        transition: fill $fast ease;
+    }
+    &:hover path {
+        fill: $primary;
+    }
+}
+
+.closeNav {
+    position: absolute;
+    top: $l + $m;
+    right: 0;
+}
+
+.mobileNav {
+    position: fixed;
+    width: 100%;
+    top: -100%;
+    left: 0;
+    height: 100vh;
+    padding-inline: $m;
+    z-index: 3;
+    background-color: $background-secondary;
+    transition: top $medium ease;
+    &>div {
+        position: relative;
+        height: 100%;
+        @include flexColumn(center,
+        center);
+    }
+    &.active {
+        top: 0;
+    }
+}
+
+.logo {
+    height: 6em;
+    opacity: 0.75;
+    transition: opacity $fast ease;
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+.heroSection {
+    margin: $l auto;
+}
+
+@media (min-width: $mobile) {
+    header,
+    .mobileNav {
+        padding-inline: 6rem;
+    }
+}
+
+@media (min-width: $tablet) {
+    .openNav {
+        display: none;
+    }
+    .desktopNav div {
+        @include flexColumn(center,
+        flex-start);
+        margin-left: $m;
+        & a.link {
+            margin: 0.5em;
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    header {
+        padding-inline: 12.5%;
+        &.main {
+            height: 100vh;
+            @include flexColumn(flex-start,
+            flex-start);
+        }
+        & .container {
+            width: 100%;
+            flex-grow: 1;
+            @include flexColumn(center,
+            center);
+        }
+    }
+}

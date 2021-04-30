@@ -1,0 +1,80 @@
+h1 {
+    font: 400 $l/1 'Raleway', sans-serif;
+    letter-spacing: 0.1em;
+    margin: 2em 0 0.5em;
+    padding-inline: $l;
+    position: relative;
+    z-index: 1;
+    &::after {
+        position: absolute;
+        bottom: -0.5em;
+        left: 40%;
+        content: "";
+        display: block;
+        width: 20%;
+        height: 1px;
+        background-color: $primary;
+        z-index: 0;
+    }
+}
+
+h2 {
+    font: 400 $m/1 'Raleway', sans-serif;
+    letter-spacing: 0.1em;
+    margin-block: 0.5em;
+    &::before {
+        display: inline-block;
+        content: '<';
+        color: $primary;
+        margin-right: 0.25em;
+    }
+    &::after {
+        display: inline-block;
+        content: '>';
+        color: $primary;
+        margin-left: 0.25em;
+    }
+}
+
+h3 {
+    font: 700 $s/1 'Open Sans', sans-serif;
+    letter-spacing: 0.1em;
+    margin-block: 0.5em;
+}
+
+h4 {
+    font: 400 $s/1 'Open Sans', sans-serif;
+    color: $primary;
+    margin-block: 0.5em;
+}
+
+p {
+    line-height: 2;
+    margin-block: 1em;
+    & .highlight {
+        font-weight: 700;
+        color: $primary;
+        display: inline-block;
+    }
+    & a {
+        font-weight: 700;
+        color: $body;
+        text-decoration: none;
+        transition: color $fast ease;
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+@media (min-width: $tablet) {
+    h1 {
+        font-size: $xl;
+    }
+    h2 {
+        font-size: $l;
+    }
+    h3 {
+        font-size: $m;
+    }
+}

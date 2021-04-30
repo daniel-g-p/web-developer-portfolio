@@ -1,0 +1,107 @@
+#splashScreen {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $background;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    @include flexRow(center, center);
+    animation: shift-out 1s ease 4s forwards, disappear 0s ease 5s;
+}
+
+#pathD {
+    stroke-dasharray: 153;
+    stroke-dashoffset: 153;
+    animation: line-anim 2s ease 0.5s forwards, fill-white 2s ease 2s forwards;
+}
+
+#pathG {
+    stroke-dasharray: 243;
+    stroke-dashoffset: 243;
+    animation: line-anim 1.75s ease 0.75s forwards, fill-white 2s ease 2s forwards;
+}
+
+#pathP {
+    stroke-dasharray: 192;
+    stroke-dashoffset: 192;
+    animation: line-anim 1.5s ease 1s forwards, fill-white 2s ease 2s forwards;
+}
+
+#pathBracket {
+    stroke-dasharray: 362;
+    stroke-dashoffset: 362;
+    animation: line-anim 1.25s ease 1.25s forwards, fill-yellow 2s ease 2s forwards;
+}
+
+@keyframes line-anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill-white {
+    from {
+        fill: transparent;
+    }
+    to {
+        fill: $body;
+    }
+}
+
+@keyframes fill-yellow {
+    from {
+        fill: transparent;
+    }
+    to {
+        fill: $primary;
+    }
+}
+
+@keyframes shift-out {
+    to {
+        top: -100vh;
+    }
+}
+
+@keyframes disappear {
+    to {
+        display: none;
+    }
+}
+
+.fadeFromLeft {
+    opacity: 0;
+    transform: translateX(-$s);
+    transition-property: opacity, transform;
+    @include transitionTime(1s, ease);
+}
+
+.fadeFromRight {
+    opacity: 0;
+    transform: translateX($m);
+    transition-property: opacity, transform;
+    @include transitionTime(1s, ease);
+}
+
+.fadeFromBottom {
+    opacity: 0;
+    transform: translateY($m);
+    transition-property: opacity, transform;
+    @include transitionTime(1s, ease);
+}
+
+.visible {
+    opacity: 1;
+    transform: translate(0);
+    transition-property: opacity, transform;
+    @include transitionTime(1s, ease);
+}
+
+@media (max-width: $mobile) {
+    .fadeFromRight,
+    .fadeFromLeft {
+        transform: none;
+    }
+}

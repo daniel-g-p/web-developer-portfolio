@@ -1,0 +1,61 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-transparent;
+    @include flexColumn(center, center);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity $medium ease;
+    pointer-events: none;
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.modal {
+    position: relative;
+    width: 75%;
+    max-width: 480px;
+    background-color: $secondary-dark;
+    text-align: center;
+    padding: $l $m;
+    button {
+        background: none;
+        border: 2px solid $body;
+        &:hover {
+            background-color: $body;
+            color: $secondary-dark;
+            box-shadow: none;
+        }
+    }
+}
+
+svg.closeModal {
+    transform: scale(2);
+    position: absolute;
+    top: $m;
+    right: $m;
+    fill: $body;
+    transition: fill $fast ease;
+    &:hover {
+        fill: $primary;
+        cursor: pointer;
+    }
+}
+
+.confirmation {
+    transform: scale(4);
+    margin-block: $m;
+}
+
+.circlePath {
+    fill: $body;
+}
+
+.checkPath {
+    fill: $primary;
+}

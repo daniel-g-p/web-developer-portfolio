@@ -1,0 +1,18 @@
+@mixin flexRow($justify-content, $align-items) {
+    display: flex;
+    flex-direction: row;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin flexColumn($justify-content, $align-items) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin transitionTime($speed, $timingFunction) {
+    transition-duration: $speed;
+    transition-timing-function: $timingFunction;
+}

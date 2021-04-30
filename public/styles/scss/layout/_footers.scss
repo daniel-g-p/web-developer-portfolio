@@ -1,0 +1,55 @@
+footer {
+    padding: $m;
+    background-image: url("./../../images/jpg/sand_background.jpg");
+    background-size: cover;
+    background-position: right bottom;
+    text-align: left;
+}
+
+.links {
+    margin-block: $m;
+    @include flexRow(space-between,
+    center);
+    & img {
+        height: 6em;
+    }
+}
+
+.social {
+    margin-block: $m;
+    & div {
+        text-align: left;
+        @include flexRow(flex-start,
+        center);
+        margin-block: $m;
+    }
+    & a {
+        margin-right: $s;
+    }
+    & svg {
+        @include flexColumn(center,
+        center);
+        width: 32px;
+        max-height: 32px;
+        transform: scale(0.75);
+        &:hover path {
+            fill: $primary;
+        }
+        & path {
+            fill: $body;
+            transition: fill $fast;
+        }
+    }
+}
+
+@media (min-width: $mobile) {
+    footer {
+        padding-inline: 6rem;
+    }
+}
+
+@media (min-width: $desktop) {
+    footer {
+        padding-inline: 12.5%;
+    }
+}

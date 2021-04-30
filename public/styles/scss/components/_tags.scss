@@ -1,0 +1,14 @@
+.tags {
+    @include flexRow(flex-start, center);
+    flex-wrap: wrap;
+    margin-block: $m;
+    & div {
+        font-size: $xs;
+        text-transform: uppercase;
+        padding: 0.75em 1em;
+        background-color: $secondary-main;
+        border-radius: 1.5em;
+        margin-right: $xs;
+        margin-block: 0.5em;
+    }
+}

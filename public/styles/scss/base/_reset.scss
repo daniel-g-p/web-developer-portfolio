@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    &::selection {
+        background-color: $secondary-light;
+    }
+}
+
+:root {
+    font: 400 16px/1 'Open Sans', 'sans-serif';
+    letter-spacing: 0.1em;
+}
+
+body {
+    background-color: $background;
+    color: $body;
+    text-align: center;
+    transition: opacity 0.5s ease;
+    overflow-x: hidden;
+}
+
+.loading {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.no-js {
+    visibility: visible;
+    opacity: 1;
+}

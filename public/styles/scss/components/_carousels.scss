@@ -1,0 +1,49 @@
+.slider {
+    margin: $m auto;
+    max-width: 600px;
+    & h3 {
+        position: relative;
+        padding-block: 1em;
+        margin: 0 auto;
+        border-bottom: 1px solid $body;
+        width: 75%;
+        transition: color $medium ease;
+        &:hover {
+            cursor: pointer;
+            color: $primary;
+        }
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0%;
+            opacity: 0;
+            height: 3px;
+            background-color: $primary;
+            transition-property: left, width, opacity;
+            @include transitionTime($medium, ease);
+        }
+        &.active {
+            color: $primary;
+            &::after {
+                width: 100%;
+                left: 0;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.skillBlock {
+    @include flexRow(center, center);
+    flex-wrap: wrap;
+    margin-top: $l;
+}
+
+@media (min-width: $mobile) {
+    .slider {
+        @include flexRow(space-between, center);
+    }
+}

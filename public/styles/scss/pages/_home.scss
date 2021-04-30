@@ -1,0 +1,54 @@
+.myMission {
+    text-align: left;
+    & img {
+        width: 125%;
+        margin-left: -25%;
+        margin-bottom: $m;
+    }
+    & button {
+        margin: 0;
+    }
+}
+
+.container {
+    margin-block: $xl;
+}
+
+.skills {
+    background-color: $background-secondary;
+    transition: height $medium ease;
+}
+
+.contactCTA {
+    text-align: center;
+}
+
+@media (min-width: $desktop) {
+    .myMission {
+        @include flexRow (center, center);
+        & img {
+            width: 60%;
+            margin-left: -10%;
+            margin-right: $xl;
+        }
+    }
+    .contactCTA {
+        @include flexRow(space-between, center);
+        margin: 0 auto;
+        text-align: left;
+        & .imageContainer {
+            margin: 0;
+        }
+        & .contactDiv {
+            margin: 0;
+            margin-right: $xl;
+        }
+        & button {
+            margin: 0;
+        }
+    }
+    .myMission img {
+        margin-left: -25%;
+        max-width: 600px;
+    }
+}

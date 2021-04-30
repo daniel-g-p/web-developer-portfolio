@@ -1,0 +1,78 @@
+.skillCard {
+    position: relative;
+    display: none;
+    transition-property: transform, opacity;
+    @include transitionTime($fast, ease);
+    &.show {
+        display: flex;
+    }
+    &.fadeOut {
+        transform: translateY(-1.5rem);
+        opacity: 0;
+    }
+    &.fadeIn {
+        transform: translateY(1.5rem);
+        opacity: 0;
+    }
+    &>div {
+        @include flexRow(center, center);
+        width: 8rem;
+        height: 8rem;
+        margin: $s;
+        background-color: $background;
+        transition-property: transform, box-shadow;
+        @include transitionTime($fast, ease);
+        &:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 1.5rem 1rem -1rem $secondary-light;
+            &+p {
+                bottom: -$m;
+                opacity: 1;
+            }
+        }
+    }
+    & img {
+        width: 50%;
+        max-height: 50%;
+    }
+    & p {
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        bottom: -$s;
+        transition-property: opacity, bottom;
+        @include transitionTime($fast, ease);
+        pointer-events: none;
+    }
+}
+
+.stage {
+    background-color: $background;
+    padding: 4.5rem $m $m;
+    text-align: left;
+    position: relative;
+    margin-top: 6rem;
+    & .stageIcon {
+        position: absolute;
+        top: -3rem;
+        left: calc(50% - 6rem / 2);
+        background-color: inherit;
+        @include flexRow(center, center);
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        box-shadow: 0 0 3rem $background-secondary;
+        & img {
+            width: 50%;
+            max-height: 50%;
+        }
+    }
+}
+
+@media (min-width: $mobile) {
+    .stage {
+        padding-inline: $xl;
+        margin-inline: auto;
+        width: 100%;
+    }
+}
