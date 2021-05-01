@@ -39,8 +39,8 @@ header {
 
 .mobileNav {
     position: fixed;
-    width: 100%;
-    top: -100%;
+    width: 100vw;
+    top: -100vh;
     left: 0;
     height: 100vh;
     padding-inline: $m;
