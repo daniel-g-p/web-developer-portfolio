@@ -168,10 +168,17 @@ fadeFromLeft.forEach(e => intersectObserver.observe(e));
 fadeFromBottom.forEach(e => intersectObserver.observe(e));
 
 // FOUC Removal
+const splashScreen = document.querySelector("#splashScreen");
+
 window.addEventListener("load", () => {
+    if (splashScreen) {
+        splashScreen.style.display = "flex";
+        splashScreen.classList.add("loaded");
+    }
     document.body.style.visibility = "visible";
     document.body.style.opacity = 1;
-})
+    setTimeout(() => splashScreen.style.display = "none", 5000);
+});
 
 // MODALS FOR CONTACT PAGE
 
