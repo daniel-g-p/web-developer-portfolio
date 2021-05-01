@@ -40,8 +40,8 @@ app.post("/", async(req, res) => {
     const mailOptions = {
         from: data.email,
         to: "danielgiustiniperez@gmail.com",
-        subject: `Message from ${data.name}: ${data.subject}`,
-        text: data.message + `Email Address: ${data.email}`
+        subject: `${data.name}: ${data.subject}`,
+        text: data.message + `\n\nEmail Address: ${data.email}`
     }
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {

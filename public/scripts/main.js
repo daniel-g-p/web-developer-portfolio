@@ -174,10 +174,10 @@ window.addEventListener("load", () => {
     if (splashScreen) {
         splashScreen.style.display = "flex";
         splashScreen.classList.add("loaded");
+        setTimeout(() => splashScreen.style.display = "none", 5000);
     }
     document.body.style.visibility = "visible";
     document.body.style.opacity = 1;
-    setTimeout(() => splashScreen.style.display = "none", 5000);
 });
 
 // MODALS FOR CONTACT PAGE
