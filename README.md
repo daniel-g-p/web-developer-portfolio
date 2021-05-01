@@ -50,7 +50,7 @@ When it comes to JavaScript, animating objects on scroll was another learning ou
 
 ### Contact Form
 
-After only taking care of the front end of all the contact forms that I had built previously, this was my first time actually making it work. Besides using front end validation, the form informs the user on whether or not their submission was sent successfully on submission.
+After only taking care of the front end of all the contact forms that I had built previously, this was my first time actually making it work. Besides using front end validation, the form informs the user on whether or not their message was sent successfully on submission.
 
 ## Project Status
 
