@@ -4,6 +4,14 @@
 
 Welcome to my first web developer portfolio, thanks for checking it out! This is my personal showroom for the work I have done so far on my journey as a developer.
 
+## Table of Contents
+
+1. [Motivation](#motivation)
+2. [Technologies](#technologies)
+3. [Features](#features)
+4. [Project Status](#project-status)
+5. [References](#references)
+
 ## Motivation
 
 Other than being an excellent way to start putting my name out there, this project was largely inspired by my desire to challenge myself to design, develop, and deploy an entire website from start to finish. The website was coded following a mobile first approach, which was important to me given the current developments in smartphone usage.
@@ -50,8 +58,8 @@ For now, I plan to leave the portfolio the way it is for a while to focus on oth
 
 ## References
 
-Markup : * Sass Documentation: https://sass-lang.com/documentation
-         * 7-1 Folder Structure Article: https://www.learnhowtoprogram.com/user-interfaces/building-layouts-preprocessors/7-1-sass-architecture
-         * SVG Animations Tutorial: https://www.youtube.com/watch?v=vJNVramny9k
-         * Nodemailer Documentation: https://nodemailer.com/about/
-         * Intersection Observer API Documentation: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+* Sass Documentation: https://sass-lang.com/documentation
+* 7-1 Folder Structure Article: https://www.learnhowtoprogram.com/user-interfaces/building-layouts-preprocessors/7-1-sass-architecture
+* SVG Animations Tutorial: https://www.youtube.com/watch?v=vJNVramny9k
+* Nodemailer Documentation: https://nodemailer.com/about/
+* Intersection Observer API Documentation: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
