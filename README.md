@@ -14,7 +14,7 @@ Welcome to my first web developer portfolio, thanks for checking it out! This is
 
 ## Motivation
 
-Other than being an excellent way to start putting my name out there, this project was largely inspired by my desire to challenge myself to design, develop, and deploy an entire website from start to finish. The website was coded following a mobile first approach, which was important to me given the current developments in smartphone usage.
+Other than being a great way to start putting my name out there, this project was largely inspired by my desire to challenge myself to design, develop, and deploy an entire website from start to finish. The website was coded following a mobile first approach, which was important to me given the current developments in smartphone usage.
 
 ## Technologies
 
