@@ -2,7 +2,7 @@
 
 ![Web Developer Portfolio](https://github.com/daniel-g-p/web-developer-portfolio/blob/master/cover_image.PNG)
 
-Welcome to my first web developer portfolio, thanks for checking it out! This is my personal showroom for the work I have done so far on my journey as a developer.
+Welcome to my first web developer portfolio, thanks for checking it out! This is my personal showroom for the work I have done so far on my journey as a developer, feel free to visit the live site at [www.danielgiustiniperez.com](https://www.danielgiustiniperez.com)
 
 ## Table of Contents
 
