@@ -1,6 +1,6 @@
 # Web Developer Portfolio
 
-Markup : ![Web Developer Portfolio](./cover_image.png)
+![Web Developer Portfolio](https://github.com/daniel-g-p/web-developer-portfolio/blob/master/cover_image.PNG)
 
 Welcome to my first web developer portfolio, thanks for checking it out! This is my personal showroom for the work I have done so far on my journey as a developer.
 
@@ -50,8 +50,8 @@ For now, I plan to leave the portfolio the way it is for a while to focus on oth
 
 ## References
 
-Markup :    * Sass Documentation: https://sass-lang.com/documentation
-            * 7-1 Folder Structure Article: https://www.learnhowtoprogram.com/user-interfaces/building-layouts-preprocessors/7-1-sass-architecture
-            * SVG Animations Tutorial: https://www.youtube.com/watch?v=vJNVramny9k
-            * Nodemailer Documentation: https://nodemailer.com/about/
-            * Intersection Observer API Documentation: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+Markup : * Sass Documentation: https://sass-lang.com/documentation
+         * 7-1 Folder Structure Article: https://www.learnhowtoprogram.com/user-interfaces/building-layouts-preprocessors/7-1-sass-architecture
+         * SVG Animations Tutorial: https://www.youtube.com/watch?v=vJNVramny9k
+         * Nodemailer Documentation: https://nodemailer.com/about/
+         * Intersection Observer API Documentation: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
