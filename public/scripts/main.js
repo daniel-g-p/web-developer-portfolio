@@ -1,3 +1,61 @@
+// FOUC REMOVAL AND CACHING
+
+const splashScreen = document.querySelector("#splashScreen");
+
+window.addEventListener("load", () => {
+    if (splashScreen) {
+        splashScreen.style.display = "flex";
+        splashScreen.classList.add("loaded");
+        setTimeout(() => splashScreen.style.display = "none", 5000);
+    }
+    document.body.style.visibility = "visible";
+    document.body.style.opacity = 1;
+});
+
+// MOBILE NAVIGATION MENU
+
+const navToggles = document.querySelectorAll(".navToggle");
+const mobileNav = document.querySelector(".mobileNav");
+
+navToggles.forEach(t => t.addEventListener("click", () => mobileNav.classList.toggle("active")));
+
+
+// FADE ANIMATIONS ON SCROLL
+
+const fadeFromRight = document.querySelectorAll(".rightFade");
+fadeFromRight.forEach(e => {
+    if (e) { e.classList.add("fadeFromRight") }
+});
+
+const fadeFromLeft = document.querySelectorAll(".leftFade");
+fadeFromLeft.forEach(e => {
+    if (e) { e.classList.add("fadeFromLeft") }
+});
+
+const fadeFromBottom = document.querySelectorAll(".bottomFade");
+fadeFromBottom.forEach(e => {
+    if (e) { e.classList.add("fadeFromBottom") }
+});
+
+const options = {
+    root: null,
+    threshold: 0.125
+};
+
+const intersectObserver = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add("visible");
+        } else
+            e.target.classList.remove("visible");
+    });
+}, options);
+
+fadeFromRight.forEach(e => intersectObserver.observe(e));
+fadeFromLeft.forEach(e => intersectObserver.observe(e));
+fadeFromBottom.forEach(e => intersectObserver.observe(e));
+
+
 // SKILLS SLIDER - HOME PAGE
 
 const sliderButtons = document.querySelectorAll(".slider h3");
@@ -63,6 +121,7 @@ const addSkillsPromise = s => {
 
 
 // FORM VALIDATION ON CONTACT PAGE
+
 const form = document.querySelector("form");
 const nameInput = document.querySelector("#nameInput");
 const emailInput = document.querySelector("#emailInput");
@@ -132,53 +191,6 @@ const isValid = (el) => {
     return !el.classList.contains("error");
 }
 
-// FADE ANIMATIONS ON SCROLL
-
-const fadeFromRight = document.querySelectorAll(".rightFade");
-fadeFromRight.forEach(e => {
-    if (e) { e.classList.add("fadeFromRight") }
-});
-
-const fadeFromLeft = document.querySelectorAll(".leftFade");
-fadeFromLeft.forEach(e => {
-    if (e) { e.classList.add("fadeFromLeft") }
-});
-
-const fadeFromBottom = document.querySelectorAll(".bottomFade");
-fadeFromBottom.forEach(e => {
-    if (e) { e.classList.add("fadeFromBottom") }
-});
-
-const options = {
-    root: null,
-    threshold: 0.125
-};
-
-const intersectObserver = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add("visible");
-        } else
-            e.target.classList.remove("visible");
-    });
-}, options);
-
-fadeFromRight.forEach(e => intersectObserver.observe(e));
-fadeFromLeft.forEach(e => intersectObserver.observe(e));
-fadeFromBottom.forEach(e => intersectObserver.observe(e));
-
-// FOUC Removal
-const splashScreen = document.querySelector("#splashScreen");
-
-window.addEventListener("load", () => {
-    if (splashScreen) {
-        splashScreen.style.display = "flex";
-        splashScreen.classList.add("loaded");
-        setTimeout(() => splashScreen.style.display = "none", 5000);
-    }
-    document.body.style.visibility = "visible";
-    document.body.style.opacity = 1;
-});
 
 // MODALS FOR CONTACT PAGE
 
@@ -201,11 +213,3 @@ const closeModal = (overlay) => {
     overlay.classList.remove("active");
     setTimeout(() => overlay.style.visibility = "hidden", 500);
 };
-
-
-// MOBILE NAVIGATION MENU
-
-const navToggles = document.querySelectorAll(".navToggle");
-const mobileNav = document.querySelector(".mobileNav");
-
-navToggles.forEach(t => t.addEventListener("click", () => mobileNav.classList.toggle("active")));
