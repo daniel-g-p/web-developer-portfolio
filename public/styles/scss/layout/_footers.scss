@@ -1,31 +1,26 @@
 footer {
     padding: $m;
-    background-image: url("./../../images/jpg/sand_background.jpeg");
-    background-size: cover;
-    background-position: right bottom;
+    box-shadow: 0 0 1rem $background-secondary;
     text-align: left;
 }
 
 .links {
     margin-block: $m;
-    @include flexRow(space-between,
-    center);
+    @include flexRow(space-between, center);
 }
 
 .social {
     margin-block: $m;
     & div {
         text-align: left;
-        @include flexRow(flex-start,
-        center);
+        @include flexRow(flex-start, center);
         margin-block: $m;
     }
     & a {
         margin-right: $s;
     }
     & svg {
-        @include flexColumn(center,
-        center);
+        @include flexColumn(center, center);
         width: 32px;
         max-height: 32px;
         transform: scale(0.75);

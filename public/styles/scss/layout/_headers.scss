@@ -1,8 +1,12 @@
 header {
     padding: $m;
-    background-image: url("./../../images/jpg/sand_background.jpeg");
-    background-size: cover;
-    background-position: right bottom;
+    box-shadow: 0 0 1rem $background-secondary;
+    &.main {
+        background-image: url("./../../images/jpg/sand_background.jpeg");
+        background-size: cover;
+        background-position: right bottom;
+        box-shadow: none;
+    }
     & h1 {
         margin-block: $xl;
     }
