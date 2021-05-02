@@ -35,7 +35,7 @@ app.get("/contact", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "contact.html"));
 });
 
-app.post("/", async(req, res) => {
+app.post("/", (req, res) => {
     const data = req.body;
     const mailOptions = {
         from: data.email,
