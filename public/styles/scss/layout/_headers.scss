@@ -1,6 +1,6 @@
 header {
     padding: $m;
-    background-image: url("./../../images/jpg/sand_background.jpg");
+    background-image: url("./../../images/jpg/sand_background.jpeg");
     background-size: cover;
     background-position: right bottom;
     & h1 {
@@ -59,7 +59,8 @@ header {
 }
 
 .logo {
-    height: 6em;
+    width: 3rem;
+    height: 6rem;
     opacity: 0.75;
     transition: opacity $fast ease;
     &:hover {

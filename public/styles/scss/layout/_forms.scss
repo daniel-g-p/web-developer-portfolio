@@ -34,7 +34,7 @@ form {
         max-height: 24px;
         left: $s;
         & img {
-            width: 100%;
+            width: inherit;
         }
     }
     & input,

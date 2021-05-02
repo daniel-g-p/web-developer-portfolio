@@ -1,6 +1,6 @@
 footer {
     padding: $m;
-    background-image: url("./../../images/jpg/sand_background.jpg");
+    background-image: url("./../../images/jpg/sand_background.jpeg");
     background-size: cover;
     background-position: right bottom;
     text-align: left;
@@ -10,9 +10,6 @@ footer {
     margin-block: $m;
     @include flexRow(space-between,
     center);
-    & img {
-        height: 6em;
-    }
 }
 
 .social {
