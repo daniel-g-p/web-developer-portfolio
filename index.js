@@ -31,8 +31,8 @@ app.post("/", (req, res) => {
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: process.env.EMAIL,
-            pass: process.env.PASSWORD
+            user: "danielgiustiniperez@gmail.com",
+            pass: "WebDeveloperBootcamp2021"
         }
     });
     const data = req.body;
@@ -45,10 +45,10 @@ app.post("/", (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             res.json({ status: "error" });
+            console.log(error);
         } else {
             res.json({ status: "success" });
         };
-        process.kill(process.pid);
     });
 });
 
