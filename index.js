@@ -7,14 +7,6 @@ require("dotenv").config();
 
 const nodemailer = require("nodemailer");
 
-const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD
-    }
-});
-
 app.use(express.static("public"));
 
 app.use(express.json());
@@ -36,6 +28,13 @@ app.get("/contact", (req, res) => {
 });
 
 app.post("/", (req, res) => {
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: process.env.EMAIL,
+            pass: process.env.PASSWORD
+        }
+    });
     const data = req.body;
     const mailOptions = {
         from: data.email,
@@ -49,6 +48,7 @@ app.post("/", (req, res) => {
         } else {
             res.json({ status: "success" });
         };
+        process.kill(process.pid);
     });
 });
 
