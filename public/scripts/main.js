@@ -144,11 +144,9 @@ if (form) {
         if (!emailInput.lastElementChild.value.match(emailFormat)) {
             emailInput.classList.add("error");
             scrollToFirstError();
-            return;
         };
         if (inputs.every(isValid)) {
-            sendForm();
-            return;
+            return sendForm();
         };
     });
     inputs.forEach(i => i.addEventListener("input", () => i.classList.remove("error")));

@@ -3,9 +3,9 @@ const app = express();
 
 const path = require("path");
 
-require("dotenv").config();
-
 const nodemailer = require("nodemailer");
+
+const Joi = require("joi");
 
 app.use(express.static("public"));
 
@@ -36,20 +36,35 @@ app.post("/", (req, res) => {
         }
     });
     const data = req.body;
-    const mailOptions = {
-        from: data.email,
-        to: "danielgiustiniperez@gmail.com",
-        subject: `${data.name}: ${data.subject}`,
-        text: data.message + `\n\nEmail Address: ${data.email}`
-    }
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            res.json({ status: "error" });
-            console.log(error);
-        } else {
-            res.json({ status: "success" });
-        };
+    console.log(data);
+    const schema = Joi.object({
+        name: Joi.string().required(),
+        email: Joi.string().email().required(),
+        subject: Joi.string().required(),
+        message: Joi.string().required()
     });
+    const validatedData = schema.validate(data);
+    console.log(validatedData);
+    if (validatedData.error) {
+        res.json({ status: "error" });
+        console.log("Failed at input validation");
+    } else {
+        const mailOptions = {
+            from: data.email,
+            to: "danielgiustiniperez@gmail.com",
+            subject: `${data.name}: ${data.subject}`,
+            text: data.message + `\n\nEmail Address: ${data.email}`
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+                console.log("Failed at email sending");
+                res.json({ status: "error" });
+            } else {
+                res.json({ status: "success" });
+            }
+        })
+    }
 });
 
 app.use((req, res) => {
