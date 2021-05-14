@@ -46,8 +46,7 @@ app.post("/", (req, res) => {
     const validatedData = schema.validate(data);
     console.log(validatedData);
     if (validatedData.error) {
-        res.json({ status: "error" });
-        console.log("Failed at input validation");
+        return res.json({ status: "error" });
     } else {
         const mailOptions = {
             from: data.email,
@@ -57,11 +56,9 @@ app.post("/", (req, res) => {
         };
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
-                console.log(error);
-                console.log("Failed at email sending");
-                res.json({ status: "error" });
+                return res.json({ status: "error" });
             } else {
-                res.json({ status: "success" });
+                return res.json({ status: "success" });
             }
         })
     }
