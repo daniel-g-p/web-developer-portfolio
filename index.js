@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+require("dotenv").config();
+
 const path = require("path");
 
 const nodemailer = require("nodemailer");
@@ -31,8 +33,8 @@ app.post("/", (req, res) => {
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "danielgiustiniperez@gmail.com",
-            pass: "WebDeveloperBootcamp2021"
+            user: process.env.EMAIL,
+            pass: process.env.PASSWORD
         }
     });
     const data = req.body;
@@ -50,7 +52,7 @@ app.post("/", (req, res) => {
     } else {
         const mailOptions = {
             from: data.email,
-            to: "danielgiustiniperez@gmail.com",
+            to: process.env.EMAIL,
             subject: `${data.name}: ${data.subject}`,
             text: data.message + `\n\nEmail Address: ${data.email}`
         };
