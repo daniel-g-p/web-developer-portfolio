@@ -14,6 +14,7 @@ app.use(express.static("public"));
 app.use(express.json());
 
 app.get("/", (req, res) => {
+    process.kill(process.pid, 'SIGTERM');
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
@@ -64,10 +65,12 @@ app.post("/", (req, res) => {
             }
         })
     }
+    process.kill(process.pid, 'SIGTERM');
 });
 
 app.use((req, res) => {
     res.redirect("/");
+    process.kill(process.pid, 'SIGTERM');
 });
 
 app.listen(8080, () => {
